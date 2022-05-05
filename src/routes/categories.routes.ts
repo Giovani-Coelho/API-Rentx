@@ -1,20 +1,27 @@
 import { Router } from 'express'
-import { CategoriesRepository } from '../modules/cars/repositories/CategoriesRepositorys'
+import multer from 'multer'
+
 import { createCategoryController } from '../modules/cars/useCases/createCategory'
+import { listCategoriesController } from '../modules/cars/useCases/listCategories'
+import { importCategoryController } from '../modules/cars/useCases/importCategory'
 
 const categoriesRoutes = Router()
-
-const categoriesRepository = new CategoriesRepository()
-
-// barra se referencia ao /categories
-categoriesRoutes.post('/', (req, res) => {
-  return createCategoryController.handle(req, res)
+// passar qual o destino onde vai ser salvo, usa-lo como middleware
+const upload = multer({
+  dest: './tmp',
 })
 
-categoriesRoutes.get('/', (req, res) => {
-  const all = categoriesRepository.list()
-
-  return res.json(all)
+// barra se referencia ao /categories
+categoriesRoutes.post('/', (req, res) =>
+  createCategoryController.handle(req, res),
+)
+// responsavel por pegar e listar os objetos do banco de dados
+categoriesRoutes.get('/', (req, res) =>
+  listCategoriesController.handle(req, res),
+)
+// passa o middleware e falar que vai ser importado apenas um arquivo e passado o nome do arquivo
+categoriesRoutes.post('/import', upload.single('file'), (req, res) => {
+  return importCategoryController.handle(req, res)
 })
 
 export { categoriesRoutes }

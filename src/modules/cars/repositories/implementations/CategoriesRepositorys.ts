@@ -1,17 +1,28 @@
-import { Category } from '../model/Category'
+import { Category } from '../../model/Category'
 import {
   ICategoriesRepository,
   ICreateCategoryDTO,
-} from './ICategoriesRepository'
+} from '../ICategoriesRepository'
 
 //DTO -> Data transfer object
 
 class CategoriesRepository implements ICategoriesRepository {
   private categories: Category[]
 
+  private static INSTANCE: CategoriesRepository
+
   //faz com que Category seja inicializa quando for uma instancia
-  constructor() {
+  private constructor() {
     this.categories = []
+  }
+
+  public static getInstance(): CategoriesRepository {
+    // caso nao tenha criado o banco de dados crie
+    if (!CategoriesRepository.INSTANCE) {
+      CategoriesRepository.INSTANCE = new CategoriesRepository()
+    }
+    // se ja tiver uma instancia criada retorna a ja criada
+    return CategoriesRepository.INSTANCE
   }
 
   create({ name, description }: ICreateCategoryDTO): void {
