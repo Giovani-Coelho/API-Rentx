@@ -1,4 +1,5 @@
 import { Request, Response } from 'express'
+
 import { CreateCategoryUseCase } from './CraeteCategoryUseCase'
 
 class CreateCategoryController {

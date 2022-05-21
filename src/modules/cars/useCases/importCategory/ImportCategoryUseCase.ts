@@ -1,5 +1,6 @@
-import fs from 'fs'
 import { parse as csvParse } from 'csv-parse'
+import fs from 'fs'
+
 import { ICategoriesRepository } from '../../repositories/ICategoriesRepository'
 
 interface IImportCategory {
@@ -13,7 +14,7 @@ class ImportCategoryUseCase {
   // faz a leitura das categorias
   loadCategories(file: Express.Multer.File): Promise<IImportCategory[]> {
     return new Promise((resolve, reject) => {
-      //permite fazer leitura do arquivo em partes, e passa como parametro qual o caminho do arquivo que deve ser lido
+      // permite fazer leitura do arquivo em partes, e passa como parametro qual o caminho do arquivo que deve ser lido
       const stream = fs.createReadStream(file.path)
 
       const categories: IImportCategory[] = []
@@ -32,7 +33,7 @@ class ImportCategoryUseCase {
           })
         })
         .on('end', () => {
-          //apos executar exclua o arquivo
+          // apos executar exclua o arquivo
           fs.promises.unlink(file.path)
           resolve(categories)
         })
@@ -48,9 +49,9 @@ class ImportCategoryUseCase {
     categories.map(async category => {
       const { name, description } = category
 
-      //verifica se exist alguma categoria com esse nome
+      // verifica se exist alguma categoria com esse nome
       const existCategory = this.categoriesRepository.findByName(name)
-      //se nao existir crie
+      // se nao existir crie
       if (!existCategory) {
         this.categoriesRepository.create({
           name,

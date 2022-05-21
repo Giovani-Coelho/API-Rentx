@@ -4,14 +4,15 @@ import {
   ICreateCategoryDTO,
 } from '../ICategoriesRepository'
 
-//DTO -> Data transfer object
+// DTO -> Data transfer object
 
 class CategoriesRepository implements ICategoriesRepository {
   private categories: Category[]
 
+  // eslint-disable-next-line no-use-before-define
   private static INSTANCE: CategoriesRepository
 
-  //faz com que Category seja inicializa quando for uma instancia
+  // faz com que Category seja inicializa quando for uma instancia
   private constructor() {
     this.categories = []
   }
@@ -41,7 +42,7 @@ class CategoriesRepository implements ICategoriesRepository {
   list(): Category[] {
     return this.categories
   }
-  //verifica se ja existe a categoria de carro colocada
+  // verifica se ja existe a categoria de carro colocada
   findByName(name: string): Category {
     const category = this.categories.find(category => category.name === name)
     return category

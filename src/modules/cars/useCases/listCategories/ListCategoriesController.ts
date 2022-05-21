@@ -1,4 +1,5 @@
 import { Request, Response } from 'express'
+
 import { ListCategoriesUseCases } from './ListCategoriesUseCase'
 
 class ListCategoriesController {

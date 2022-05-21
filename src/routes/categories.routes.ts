@@ -2,8 +2,8 @@ import { Router } from 'express'
 import multer from 'multer'
 
 import { createCategoryController } from '../modules/cars/useCases/createCategory'
-import { listCategoriesController } from '../modules/cars/useCases/listCategories'
 import { importCategoryController } from '../modules/cars/useCases/importCategory'
+import { listCategoriesController } from '../modules/cars/useCases/listCategories'
 
 const categoriesRoutes = Router()
 // passar qual o destino onde vai ser salvo, usa-lo como middleware
