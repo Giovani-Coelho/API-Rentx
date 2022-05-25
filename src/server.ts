@@ -1,10 +1,11 @@
 import express from 'express'
 import SwaggerUi from 'swagger-ui-express'
 
+import './database'
+
 import { router } from './routes'
 import swaggerFile from './swagger.json'
 // para importar o arquivo de banco de dados, o import ja reconhece o index
-import './database'
 
 const app = express()
 

@@ -1,4 +1,6 @@
-import { Category } from '../../model/Category'
+import { getRepository, Repository } from 'typeorm'
+
+import { Category } from '../../entities/Category'
 import {
   ICategoriesRepository,
   ICreateCategoryDTO,
@@ -7,44 +9,32 @@ import {
 // DTO -> Data transfer object
 
 class CategoriesRepository implements ICategoriesRepository {
-  private categories: Category[]
+  // faz com que seja proprio apenas desta classe
+  private repository: Repository<Category>
 
-  // eslint-disable-next-line no-use-before-define
-  private static INSTANCE: CategoriesRepository
-
-  // faz com que Category seja inicializa quando for uma instancia
-  private constructor() {
-    this.categories = []
+  // faz com que Category seja inicializada quando for uma instancia
+  constructor() {
+    this.repository = getRepository(Category)
   }
 
-  public static getInstance(): CategoriesRepository {
-    // caso nao tenha criado o banco de dados crie
-    if (!CategoriesRepository.INSTANCE) {
-      CategoriesRepository.INSTANCE = new CategoriesRepository()
-    }
-    // se ja tiver uma instancia criada retorna a ja criada
-    return CategoriesRepository.INSTANCE
-  }
-
-  create({ name, description }: ICreateCategoryDTO): void {
-    const category = new Category()
-
-    // atribui todas as propriedades para o objeto category
-    Object.assign(category, {
+  async create({ name, description }: ICreateCategoryDTO): Promise<void> {
+    const category = this.repository.create({
+      // atribui todas as propriedades para o objeto category
       name,
       description,
-      created_at: new Date(),
     })
-    // inseri os dados ao banco
-    this.categories.push(category)
+
+    await this.repository.save(category)
   }
   // lista o banco de dados
-  list(): Category[] {
-    return this.categories
+  async list(): Promise<Category[]> {
+    const categories = await this.repository.find()
+
+    return categories
   }
   // verifica se ja existe a categoria de carro colocada
-  findByName(name: string): Category {
-    const category = this.categories.find(category => category.name === name)
+  async findByName(name: string): Promise<Category> {
+    const category = await this.repository.findOne({ name })
     return category
   }
 }
