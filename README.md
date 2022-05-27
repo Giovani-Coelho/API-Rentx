@@ -19,7 +19,7 @@
 
 ## 👨🏻‍💻 Sobre o Projeto 
 
-Rentx é um aplicativo que permite aos usuários alugar carros facilmente usando um aplicativo móvel. Este é o backend do produto, uma API de descanso com autenticação completa do usuário, que permite que os usuários naveguem por uma lista de carros e aluguem se quiserem.
+Rentx é um aplicativo que permite aos usuários alugar carros facilmente usando um aplicativo. Este é o backend de uma API com autenticação completa do usuário, que permite que os usuários naveguem por uma lista de carros e aluguem se quiserem.
 
 Aprendi muito desenvolvendo esta aplicação, alguns dos principais conceitos que aprendi foram:
  
@@ -50,4 +50,4 @@ Main technologies that I've used to develop this API
 - [EditorConfig](https://editorconfig.org/)
 
 
-Nao concluido
+# Nao concluido!!
