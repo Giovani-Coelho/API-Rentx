@@ -3,6 +3,7 @@
   "port": 5432,
   "host": "localhost",
   "username": "docker",
+  "synchronize": false,
   "password": "ignite",
   "database": "rentx",
   "migrations": [

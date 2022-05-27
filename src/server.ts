@@ -3,6 +3,8 @@ import SwaggerUi from 'swagger-ui-express'
 
 import './database'
 
+import './shared/container'
+
 import { router } from './routes'
 import swaggerFile from './swagger.json'
 // para importar o arquivo de banco de dados, o import ja reconhece o index
@@ -36,5 +38,3 @@ app.listen(3333, () => console.log('Server is running'))
 ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
 ⠄⠄⠄⠄⠄⠄⠄⠄⠄I CAN SEE YOU⠄⠄⠄⠄⠄⠄⠄⠄
 */
-
-// ---------------------------------------

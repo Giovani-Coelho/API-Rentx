@@ -1,3 +1,5 @@
+import { getRepository, Repository } from 'typeorm'
+
 import { Specification } from '../../entities/Specification'
 import {
   ISpecificationRepository,
@@ -6,27 +8,23 @@ import {
 
 // implementa a interface criada
 class SpecificationsRepository implements ISpecificationRepository {
-  // passar quais eh a interface do array
-  private specifications: Specification[]
-  // iniciar o array
+  private repository: Repository<Specification>
+
   constructor() {
-    this.specifications = []
+    this.repository = getRepository(Specification)
   }
 
-  create({ name, description }: ICreateSpecificationDTO): void {
-    const specification = new Specification()
-
-    Object.assign(specification, {
-      name,
+  async create({ name, description }: ICreateSpecificationDTO): Promise<void> {
+    const specification = this.repository.create({
       description,
-      created_at: new Date(),
+      name,
     })
 
-    this.specifications.push(specification)
+    await this.repository.save(specification)
   }
 
-  findByName(name: string): Specification {
-    const specification = this.specifications.find(value => value.name === name)
+  async findByName(name: string): Promise<Specification> {
+    const specification = this.repository.findOne({ name })
 
     return specification
   }
