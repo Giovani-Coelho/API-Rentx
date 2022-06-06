@@ -13,7 +13,7 @@
 
 
 <p align="center">
-  <a href="#-about-the-project">Sobre o Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-sobre-o-projeto">Sobre o Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;
 </p>
 
@@ -50,4 +50,8 @@ Main technologies that I've used to develop this API
 - [EditorConfig](https://editorconfig.org/)
 
 
+<<<<<<< HEAD
 # Nao concluido!!!
+=======
+# Nao concluido!!
+>>>>>>> 7adbfc29c11004d7f5b5a2db128678a7428735e4
