@@ -50,8 +50,4 @@ Main technologies that I've used to develop this API
 - [EditorConfig](https://editorconfig.org/)
 
 
-<<<<<<< HEAD
 # Nao concluido!!!
-=======
-# Nao concluido!!
->>>>>>> 7adbfc29c11004d7f5b5a2db128678a7428735e4
