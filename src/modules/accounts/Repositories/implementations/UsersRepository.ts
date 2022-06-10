@@ -11,7 +11,7 @@ class UserRepository implements IUserRepository {
     this.repository = getRepository(User)
   }
 
-  async create({
+  public async create({
     name,
     email,
     password,
@@ -27,8 +27,14 @@ class UserRepository implements IUserRepository {
     await this.repository.save(user)
   }
 
-  async findByEmail(email: string): Promise<User> {
+  public async findByEmail(email: string): Promise<User> {
     const user = await this.repository.findOne({ email })
+
+    return user
+  }
+
+  public async findById(id: string): Promise<User> {
+    const user = await this.repository.findOne({ id })
 
     return user
   }
