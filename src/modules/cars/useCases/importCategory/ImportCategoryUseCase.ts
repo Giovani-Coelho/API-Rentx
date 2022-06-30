@@ -2,8 +2,8 @@ import { parse as csvParse } from 'csv-parse'
 import fs from 'fs'
 import { inject, injectable } from 'tsyringe'
 
+import { CategoriesRepository } from '../../infra/typeorm/repositories/CategoriesRepositorys'
 import { ICategoriesRepository } from '../../repositories/ICategoriesRepository'
-import { CategoriesRepository } from '../../repositories/implementations/CategoriesRepositorys'
 
 interface IImportCategory {
   name: string

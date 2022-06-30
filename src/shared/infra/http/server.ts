@@ -2,13 +2,13 @@ import express, { NextFunction, Request, Response } from 'express'
 import 'express-async-errors'
 import SwaggerUi from 'swagger-ui-express'
 
-import './database'
+import '../typeorm'
 
-import './shared/container'
+import '../../container'
 
-import { AppError } from './errors/appError'
+import swaggerFile from '../../../swagger.json'
+import { AppError } from '../../errors/appError'
 import { router } from './routes'
-import swaggerFile from './swagger.json'
 // para importar o arquivo de banco de dados, o import ja reconhece o index
 
 const app = express()
