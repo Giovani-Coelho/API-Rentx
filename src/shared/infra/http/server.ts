@@ -1,16 +1,17 @@
+import 'reflect-metadata'
 import express, { NextFunction, Request, Response } from 'express'
 import 'express-async-errors'
 import SwaggerUi from 'swagger-ui-express'
-
-import '../typeorm'
 
 import '../../container'
 
 import swaggerFile from '../../../swagger.json'
 import { AppError } from '../../errors/appError'
+import createConnection from '../typeorm'
 import { router } from './routes'
 // para importar o arquivo de banco de dados, o import ja reconhece o index
 
+createConnection()
 const app = express()
 
 app.use(express.json())

@@ -1,7 +1,6 @@
 import { Request, Response } from 'express'
 import { container } from 'tsyringe'
 
-import { Car } from '../../infra/typeorm/entities/Car'
 import { CreateCarUseCase } from './CreateCarUseCase'
 
 class CreateCarController {
