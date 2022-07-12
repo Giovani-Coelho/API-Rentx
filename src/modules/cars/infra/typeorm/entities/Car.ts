@@ -16,7 +16,7 @@ import { Specification } from './Specification'
 @Entity('cars')
 class Car {
   @PrimaryColumn()
-  id: string
+  id?: string
 
   @Column()
   name: string
