@@ -11,8 +11,6 @@ class CreateCarSpecificationController {
       CreateCarsSpecificationUseCase,
     )
 
-    console.log(id)
-
     const cars = await creteCarSpecificationUseCase.execute({
       car_id: id,
       specifications_id,
