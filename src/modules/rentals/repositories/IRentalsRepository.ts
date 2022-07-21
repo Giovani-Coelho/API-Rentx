@@ -7,7 +7,7 @@ interface IRentalsRepository {
   create({
     car_id,
     user_id,
-    expected_return_date,
+    expect_return_date,
   }: ICreateRentalDTO): Promise<Rental>
 }
 

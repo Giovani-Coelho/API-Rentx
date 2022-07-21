@@ -1,6 +1,6 @@
 import { MigrationInterface, QueryRunner, Table } from 'typeorm'
 
-export class CreateRentals1644253206548 implements MigrationInterface {
+export class CreateRentals1657530791732 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
@@ -30,7 +30,7 @@ export class CreateRentals1644253206548 implements MigrationInterface {
             isNullable: true,
           },
           {
-            name: 'expected_return_date',
+            name: 'expect_return_date',
             type: 'timestamp',
           },
           {
@@ -51,7 +51,7 @@ export class CreateRentals1644253206548 implements MigrationInterface {
         ],
         foreignKeys: [
           {
-            name: 'FKCarsRentals',
+            name: 'FKCarRental',
             referencedTableName: 'cars',
             referencedColumnNames: ['id'],
             columnNames: ['car_id'],
@@ -72,6 +72,6 @@ export class CreateRentals1644253206548 implements MigrationInterface {
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    queryRunner.dropTable('rentals')
+    await queryRunner.dropTable('rentals')
   }
 }
