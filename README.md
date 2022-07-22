@@ -49,9 +49,9 @@ Principais tecnologias usadas para desenvolver está API
 - [Prettier](https://prettier.io/)
 - [EditorConfig](https://editorconfig.org/)
 
-# **levantamento de requisitos** ⬆️
+# **levantamento de requisitos** 
 
-# Cadastro de carro
+# Cadastro de carro 🚙
 
 **RF**
 - Deve ser possível cadastrar um novo carro.
