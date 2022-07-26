@@ -31,7 +31,7 @@ describe('Crete Category', () => {
     expect(categoryCreted).toHaveProperty('id')
   })
   // testando o caso de erro:
-  it('Should be able to create a new category', async () => {
+  it('Should not be able to create a new category with name exists', async () => {
     expect(async () => {
       const category = {
         name: 'Category Test',
