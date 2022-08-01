@@ -34,7 +34,7 @@ Aprendi muito desenvolvendo essa aplicação, alguns dos principais conceitos qu
 
 ## 🚀 Tecnologias
 
-Principais tecnologias usadas para desenvolver está API
+Principais tecnologias usadas para desenvolver esta API
 
 - [Node.js](https://nodejs.org/en/)
 - [TypeScript](https://www.typescriptlang.org/)
