@@ -148,4 +148,3 @@ Principais tecnologias usadas para desenvolver está API
 - O usuário precisa informar uma nova senha
 - O link enviado para a recuperação deve expirar em 3 horas
 
-# Nao concluido!!!
