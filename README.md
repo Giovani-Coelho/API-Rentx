@@ -148,3 +148,15 @@ Principais tecnologias usadas para desenvolver esta API
 - O usuário precisa informar uma nova senha
 - O link enviado para a recuperação deve expirar em 3 horas
 
+# Devolucao de carro
+
+**RF**
+Deve ser possivel realizar a devolucao de um carro
+
+**RN**
+Se o carro for devolvido com menos de 24horas, devera ser cobrado diaria completa.
+Ao relaizar a devolucao, o carro devera ser liberado para ouro aluguel.
+Ao realizar a devolucao, o usuario devera ser liberado para outro aluguel
+Ao realizar a devolucao devera ser calculado o total do aluguel.
+Caso o horario de devolucao seja superior ao horario previsto de entrega, devera ser copbrado multa porporcionau aos dias de atraso.
+Caso haja multa, devera ser somado ao total do aluguel.
