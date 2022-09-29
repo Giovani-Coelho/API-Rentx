@@ -3,6 +3,12 @@ import { Rental } from '../../infra/typeorm/entities/Rental'
 import { IRentalsRepository } from '../IRentalsRepository'
 
 class RentalsRepositoryInMemory implements IRentalsRepository {
+  findById(id: string): Promise<Rental> {
+    throw new Error('Method not implemented.')
+  }
+  findByUser(user_id: string): Promise<Rental[]> {
+    throw new Error('Method not implemented.')
+  }
   rentals: Rental[] = []
 
   public async findOpenRentalByCar(car_id: string): Promise<Rental> {
