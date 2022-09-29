@@ -29,6 +29,7 @@ class RentalsRepository implements IRentalsRepository {
     })
     return openByUser
   }
+
   public async create({
     car_id,
     user_id,
