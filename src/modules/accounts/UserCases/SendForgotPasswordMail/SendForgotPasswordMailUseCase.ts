@@ -14,7 +14,7 @@ class SendForgotPasswordMailUseCase {
     private usersRepository: IUserRepository,
     @inject('UsersTokensRepository')
     private usersTokensRepository: IUsersTokensRepository,
-    @inject('DateJsProvider')
+    @inject('DayJsDateProvider')
     private dateProvider: IDateProvider,
     @inject('EtherealMailProvider')
     private mailProvider: IMailProvider, // eslint-disable-next-line prettier/prettier
