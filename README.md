@@ -48,6 +48,7 @@ Principais tecnologias usadas para desenvolver esta API
 - [Eslint](https://eslint.org/)
 - [Prettier](https://prettier.io/)
 - [EditorConfig](https://editorconfig.org/)
+- [Nodemailer](https://nodemailer.com/about/)
 
 # **levantamento de requisitos** 
 
